@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="output.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+    <div class="flex justify-center items-center h-[750px]">
+        <div class="flex flex-col shadow-lg px-32 py-10 bg-[#EEF0F2] ">
+                <h1 class=" text-3xl mb-2">Sign up</h1>
+                <p class=" text-lg my-1">Email</p>
+                <input id="mail" class="border-solid border-black border-[1px]" type="text">
+                <p class=" text-lg my-1">Password</p>
+                <input id="password" class="border-solid border-black border-[1px]" type="password">
+                <button class="border-solid border-[1px] rounded border-black mt-3 max-w-fit py-1 px-3 hover:bg-black hover:text-white transition delay-150 duration-300 ease-in-out">Sign up</button>
+        </div>
+    </div>
+    </form>
+    <script>
+        const mailEl = document.querySelector('#mail');
+        const passwordEl = document.querySelector('#password');
+        const form = document.querySelector('form');
+        form.addEventListener('submit', ()=> {
+            let email = mailEl.value;
+            let password = passwordEl.value;
+            var re = /^[a-z]+[0-9]*@[a-z]+\.com/;
+            if(!re.test(email))
+            {
+                alert('enter valid email!');
+            }
+            re = /^[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+            if(!re.test(password))
+            {
+                alert('enter valid password!');
+            }
+        });
+    </script>
+</body>
+</html>
